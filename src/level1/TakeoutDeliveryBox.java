@@ -8,7 +8,7 @@ public class TakeoutDeliveryBox {
 
     static int solution(int n, int w, int num) {
         int cnt = 0;
-
+    // test
         while (num <= n) {
             int col = (num - 1) % w;
             int jump = (w - col - 1) * 2 + 1;
