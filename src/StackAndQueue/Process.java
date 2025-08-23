@@ -22,7 +22,7 @@ public class Process {
         int idx = priorities.length - 1;
         while (!process.isEmpty()) {
             int firstProcess = process.poll();
-            int priority = priorities[idx - answer];
+            int priority = priorities[idx - answer]; //가장 높은 우선순위
             if (priority == firstProcess) {
                 answer++;
                 l--;
@@ -30,7 +30,7 @@ public class Process {
             }else{
                 process.offer(firstProcess);
                 l--;
-                if(l < 0) l = process.size() - 1;
+                if(l < 0) l = process.size() - 1;  //위치 맨 뒤로 재설정
             }
         }
 
