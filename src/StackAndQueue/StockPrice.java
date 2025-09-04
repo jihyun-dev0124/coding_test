@@ -7,34 +7,27 @@ import java.util.List;
 
 public class StockPrice {
     public static void main(String[] args) {
-
+        solution(new int[]{1, 2, 3, 2, 3});
     }
 
     public static int[] solution(int[] prices) {
-        Deque<Integer> dequePrices = new ArrayDeque<>();
-        for (int price : prices) {
-            dequePrices.offer(price);
-        }
-
-        List<Integer> answerList = new ArrayList<>();
-        int count = 0;
-        while (!dequePrices.isEmpty()) {
-            Integer firstPrice = dequePrices.poll();
-            for (int price : dequePrices) {
-                count++;
-                if (firstPrice > price) {
-                    break;
-                }
+        int len = prices.length;
+        int[] answer = new int[len];
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (int i = 0; i < len; i++) {
+            while (!stack.isEmpty() && prices[stack.peek()] > prices[i]) {
+                int idx = stack.pop();
+                answer[idx] = i - idx;
             }
-            answerList.add(count);
-            count = 0;
+            stack.push(i);
         }
 
-
-        int[] answer = new int[answerList.size()];
-        for (int i = 0; i < answerList.size(); i++) {
-            answer[i] = answerList.get(i);
+        //끝까지 하락하지 않은 인덱스
+        while (!stack.isEmpty()) {
+            Integer idx = stack.pop();
+            answer[idx] = len - idx - 1;
         }
+
         return answer;
     }
 }
