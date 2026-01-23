@@ -1,12 +1,12 @@
 package leetcode.middle;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class SubarraySumEqualsK {
     public static void main(String[] args) {
         int i = subarraySum(new int[]{1, 2, 3, -3, 3}, 3);
         System.out.println("i = " + i);
+
     }
 
     public static int subarraySum(int[] nums, int k) {

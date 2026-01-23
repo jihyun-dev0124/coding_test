@@ -4,6 +4,13 @@ import java.util.*;
 
 public class Number {
     public static void main(String[] args) {
+        Stack<Character> stack = new Stack<>();
+        String name = "test";
+        stack.push(name.charAt(0));
+        char c = stack.pop();
+        String ddd = ")}]";
+
+        
         int[] solution = solution(new int[]{1, 1, 3, 3, 0, 1, 1});
         for (int i : solution) {
             System.out.print(i + " ,");
