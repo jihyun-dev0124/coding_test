@@ -16,6 +16,11 @@ public class Test {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
         path.add(0, 1);
+
+        List<List<Integer>> res1 = new ArrayList<>();
+
+        String s = "test";
+        s.replaceAll("t", "");
     }
 }
 

@@ -112,6 +112,10 @@ public class CartCommandProcessorWithUndo {
         }
 
         System.out.println(out);
+
+
+        List<String>[] bucket = new List[2];
+
     }
   /*
 9
